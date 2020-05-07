@@ -1,13 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
+import { infoProvider, InfoProvider } from './components/Context'
 import * as serviceWorker from './serviceWorker';
+import { BrowserRouter as Router } from 'react-router-dom'
 
 ReactDOM.render(
+  <InfoProvider>
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <Router>
+      <App />
+    </Router>
+  </React.StrictMode>
+  </InfoProvider>,
   document.getElementById('root')
 );
 
